@@ -1,3 +1,9 @@
+# 博士论文第四章中REP与Pointer-Mixture比较实验数据
+具体数据请查阅IJSEKE论文，获取地址为
+https://drive.google.com/open?id=1BpaHDzRX2qrNdzYinDQmy4xUhOmQshd7
+
+在小数据集上，Attention-Pointer可以取得比REP略微好一点的效果，但在大数据集上，REP模型的预测精度比Attention-Pointer预测精度略微好一点（预测轮数相同，且往后连续两轮预测精度均没有提升），REP模型的时间开销比Attention-Pointer低8%-25%。
+
 # 博士论文所有模型下载链接
 
 ## 第二章PCC模型实现地址  
