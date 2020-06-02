@@ -15,13 +15,13 @@ For grammar tokens (non-variable tokens), we use Hierarchical Language Model des
 Please check [paper](https://doi.org/10.1142/S0218194019400229) and [corrigendum paper](https://arxiv.org/abs/2005.04137) for further details. 
 
 
-We give explanation for "we learn the repetition patterns of all kinds of tokens." in dissertation: 
-
-First of all, for different kinds of tokens, we apply independent REP model to learn token repetition. For example, for grammar tokens, we use one REP model to learn token repetition, for variables, we use another isolated REP model to learn token repetition. 
-
-For grammar tokens, we also try to apply REP to learn the token repetition, however, we found that grammar tokens have no regularity of token repetition. When a large number of grammar tokens are not repeated while only a small number of grammar tokens are repeated, this leads to the situation that the model will think all nearly all grammar tokens in test set are not repeated. Thus this is equivalent to directly use traditional language model to predict token. Here we use Hierarchical Language Model as traditional language model. 
-
-For string literals or char literals or number literals, in test set, most of such tokens are marked UNK. If we think predicting UNK correctly is good, then applying REP will improve the model performance. Otherwise, it will degenerate into a similar situation as grammar tokens due to the reason that few string literals or char literals or number literals are repeated in training set or test set. 
+>We give explanation for "we learn the repetition patterns of all kinds of tokens." in dissertation: 
+<br>
+>>First of all, for different kinds of tokens, we apply independent REP model to learn token repetition. For example, for grammar tokens, we use one REP model to learn token repetition, for variables, we use another isolated REP model to learn token repetition. 
+<br>
+>>For grammar tokens, we also try to apply REP to learn the token repetition, however, we found that grammar tokens have no regularity of token repetition. When a large number of grammar tokens are not repeated while only a small number of grammar tokens are repeated, this leads to the situation that the model will think all nearly all grammar tokens in test set are not repeated. Thus this is equivalent to directly use traditional language model to predict token. Here we use Hierarchical Language Model as traditional language model. 
+<br>
+>>For string literals or char literals or number literals, in test set, most of such tokens are marked UNK. If we think predicting UNK correctly is good, then applying REP will improve the model performance. Otherwise, it will degenerate into a similar situation as grammar tokens due to the reason that few string literals or char literals or number literals are repeated in training set or test set. 
 
 ## Data preprocessor implementation
 [Data preprocessing module (aim for translating raw java files to the tensor format which REP or HLM-SLM can directly handle, github address, containing tutorial)](https://github.com/GrowingCode/JavaCodePreProcess.git)  
