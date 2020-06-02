@@ -9,13 +9,13 @@
 ## Chapter 4 REP model implementation
 [REP implementation (github address, this project is mixed with HLM-SLM model, containing tutorial)](https://github.com/GrowingCode/FrameTokenMemAtten)
 
-### Detailed experimental setting for REP and Pointer-Mixture in Chapter 4 of doctoral dissertation
+### Detailed experiments for REP and Pointer-Mixture in Chapter 4 of doctoral dissertation
 　　In Chapter 4, REP model (proposed by me) and Pointer-Mixture (proposed by JianLi) are compared. We use the similar setting as Pointer-Mixture meaning that we ignore grammar tokens when learning token repetition. 
 * only consider variable tokens
    * In this experiment, REP model and Pointer-Mixture only consider variables. When preprocessing data, we mark every variable in the sequence and use REP model or Pointer-Mixture to decide whether the variable should be the already existed one or the one in vocabulary table. 
 * for non-variable tokens　
    * For grammar tokens or other non-variable tokens, we use Hierarchical Language Model described in Chapter 3 to further improve the prediction accuracy. This optimization is described at length in Chapter 5 (there may be some confusion in the arrangement of paper content). The final accuracy is the weighted average of the two kinds of tokens (variable-tokens and non-variable tokens). 
-* Please check [paper](https://doi.org/10.1142/S0218194019400229) and [corrigendum paper](https://arxiv.org/abs/2005.04137) for further details. 
+* Please check [paper](https://doi.org/10.1142/S0218194019400229) and [corrigendum paper](https://arxiv.org/abs/2005.04137) for further details and [`experimental comparison results`](https://arxiv.org/abs/2005.04137). 
 
 ### Explanation for "we learn the repetition patterns of all kinds of tokens." in dissertation: 
 　　First of all, for different kinds of tokens, we apply independent REP model to learn token repetition. For example, for grammar tokens, we use one REP model to learn token repetition, for variables, we use another isolated REP model to learn token repetition. 
