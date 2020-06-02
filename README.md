@@ -9,7 +9,7 @@
 ## Chapter 4 REP model implementation
 [REP implementation (github address, this project is mixed with HLM-SLM model, containing tutorial)](https://github.com/GrowingCode/FrameTokenMemAtten)
 
-### Detailed Experimental setting for REP and Pointer-Mixture in Chapter 4 of doctoral dissertation
+### Detailed experimental setting for REP and Pointer-Mixture in Chapter 4 of doctoral dissertation
 　　In Chapter 4, REP model (proposed by me) and Pointer-Mixture (proposed by JianLi) are compared. We use the similar setting as Pointer-Mixture meaning that we ignore grammar tokens when learning token repetition. 
 * only consider variable tokens
    * In this experiment, REP model and Pointer-Mixture only consider variables. When preprocessing data, we mark every variable in the sequence and use REP model or Pointer-Mixture to decide whether the variable should be the already existed one or the one in vocabulary table. 
